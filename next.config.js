@@ -7,4 +7,12 @@ module.exports = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "centribal.com",
+      },
+    ],
+  },
 };

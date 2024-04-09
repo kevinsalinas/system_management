@@ -1,0 +1,162 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "name": "camiseta",
+      "description": "camiseta polo color azul",
+      "price": "30",
+      "tax": "21"
+    },
+    {
+      "id": "2",
+      "name": "camiseta casual",
+      "description": "camiseta polo color rojo",
+      "price": "12",
+      "tax": "21"
+    },
+    {
+      "id": "3",
+      "name": "camiseta deportiva",
+      "description": "camiseta polo color rojo",
+      "price": "12",
+      "tax": "21"
+    },
+    {
+      "id": "4",
+      "name": "camiseta interior",
+      "description": "camiseta polo color rojo",
+      "price": "12",
+      "tax": "21"
+    },
+    {
+      "id": "25370",
+      "name": "pantalon",
+      "description": "un pantalon azul",
+      "price": "12",
+      "tax": "21"
+    },
+    {
+      "id": "13527",
+      "name": "calcetas",
+      "description": "par de calcetas",
+      "price": "11",
+      "tax": "21"
+    },
+    {
+      "id": "15878",
+      "name": "pants",
+      "description": "pants combinado",
+      "price": "120",
+      "tax": "21"
+    },
+    {
+      "id": "31322",
+      "name": "chaqueta",
+      "description": "chaqueta de pial",
+      "price": "100",
+      "tax": "21"
+    }
+  ],
+  "orders": [
+    {
+      "id": "26339",
+      "articles": [
+        {
+          "id": "2",
+          "name": "camiseta casual",
+          "quantity": "1"
+        }
+      ],
+      "summary": 12,
+      "total": 14.52
+    },
+    {
+      "id": "37750",
+      "articles": [
+        {
+          "id": "1",
+          "name": "camiseta",
+          "quantity": "1"
+        },
+        {
+          "id": "3",
+          "name": "camiseta deportiva",
+          "quantity": 3
+        }
+      ],
+      "summary": 66,
+      "total": 79.86
+    },
+    {
+      "id": "38664",
+      "articles": [
+        {
+          "id": "4",
+          "name": "camiseta interior",
+          "quantity": "1"
+        },
+        {
+          "id": "3",
+          "name": "camiseta deportiva",
+          "quantity": 2
+        },
+        {
+          "id": "15878",
+          "name": "pants",
+          "quantity": "1"
+        },
+        {
+          "id": "13527",
+          "name": "calcetas",
+          "quantity": "1"
+        }
+      ],
+      "summary": 167,
+      "total": 202.07
+    },
+    {
+      "id": "41816",
+      "articles": [
+        {
+          "id": "2",
+          "name": "camiseta casual",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "camiseta",
+          "quantity": "1"
+        },
+        {
+          "id": "4",
+          "name": "camiseta interior",
+          "quantity": "1"
+        },
+        {
+          "id": "3",
+          "name": "camiseta deportiva",
+          "quantity": "1"
+        }
+      ],
+      "summary": 66,
+      "total": 79.86
+    },
+    {
+      "id": 15742,
+      "articles": [
+        {
+          "id": "15878",
+          "name": "pants",
+          "quantity": 3
+        },
+        {
+          "id": "31322",
+          "name": "chaqueta",
+          "quantity": 3
+        }
+      ],
+      "summary": 660,
+      "total": 798.6
+    }
+  ]
+}

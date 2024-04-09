@@ -5,12 +5,10 @@ axios.create;
 const source = axios.CancelToken.source();
 const timeoutFunction = (time_service) => {
   const resulttimeout = setTimeout(() => {
-    console.log("El tiempo es:", time_service);
     source.cancel({
       status: 408,
       message: `Request canceled after pass ${time_service} ms`,
     });
-    console.log("timeout true");
   }, time_service || 3000);
   return resulttimeout;
 };
@@ -36,10 +34,6 @@ const get = (url = "", headers = {}, time) => {
 };
 
 const post = (url = "", body = {}, headers = {}, time) => {
-  console.log("ver__Post_client");
-  console.log(url);
-  console.log(body);
-  console.log("ver__Post_client");
   const timeout = timeoutFunction(time);
   return axios
     .post(url, body, {

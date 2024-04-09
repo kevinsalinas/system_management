@@ -3,14 +3,12 @@ import Nav from "@components/nav";
 import Tables from "@components/table";
 import { Button } from "@tremor/react";
 import Link from "next/link";
-import { GetArticles } from "./api/articles/getarticles";
-
-// import GetArticles from "./api/articles/getarticles";
+import { GetOrders } from "./api/orders/getOrders";
 
 export default function Index(props) {
-  const { articles } = props;
-  const titles = ["id", "name", "description", "price", "tax", "edit"];
-  const view = "article";
+  const { orders } = props;
+  const titles = ["id", "articles", "summary", "total", "edit"];
+  const view = "order";
 
   return (
     <>
@@ -24,26 +22,24 @@ export default function Index(props) {
       </Head>
       <Nav />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8">
-        <Link href="/newArticle">
-          <Button variant="secondary" href={"/newArticle"}>
-            Nuevo Artículo
-          </Button>
+        <Link href="/newOrder">
+          <Button variant="secondary">Nueva Orden</Button>
         </Link>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
-        <Tables items={props.articles} titles={titles} view={view} />
+        <Tables items={orders} titles={titles} view={view} />
       </div>
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const indexdata = await GetArticles();
-  console.log("index data", indexdata);
+  const ordersArray = await GetOrders();
+  console.log("index data", ordersArray);
 
   return {
     props: {
-      articles: indexdata || {},
+      orders: ordersArray || {},
     },
 
     revalidate: 180, // In seconds
