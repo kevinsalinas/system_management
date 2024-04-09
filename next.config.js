@@ -15,4 +15,9 @@ module.exports = {
       },
     ],
   },
+  output: "standalone",
+  i18n: {
+    locales: ["es", "en"],
+    defaultLocale: "en",
+  },
 };

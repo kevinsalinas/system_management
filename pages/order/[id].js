@@ -53,3 +53,26 @@ export default function Page() {
     </>
   );
 }
+
+export function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: {
+        ...require(`../../messages/shared/${locale}.json`),
+        ...require(`../../messages/orders/${locale}.json`),
+      },
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      // String variant:
+      "/order/1",
+      // Object variant:
+      { params: { id: "1" } },
+    ],
+    fallback: true,
+  };
+}

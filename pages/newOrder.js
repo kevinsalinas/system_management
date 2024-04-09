@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetArticle } from "pages/api/articles/getArticle";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function NewOrder() {
   const router = useRouter();
@@ -11,6 +12,8 @@ export default function NewOrder() {
   const [articleData, setArticleData] = useState(null);
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
+
+  const t = useTranslations("Orders");
 
   useEffect(() => {
     fetch(`http://localhost:3000/articles`)
@@ -40,10 +43,21 @@ export default function NewOrder() {
       <Nav />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-14">
         <h3 className="flex justify-center my-8 text-lg font-semibold text-tremor-content-strong dark:text-dark-tremor-content-strong">
-          Agregar Nuevo Pedido
+          {t("new_order")}
         </h3>
         <NewOrderForm articleData={articleData} />
       </div>
     </>
   );
+}
+
+export function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: {
+        ...require(`../messages/shared/${locale}.json`),
+        ...require(`../messages/orders/${locale}.json`),
+      },
+    },
+  };
 }

@@ -4,10 +4,13 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { GetArticle } from "pages/api/articles/getArticle";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
   // run asynchronous tasks here
   const router = useRouter();
+  const t = useTranslations("Article");
+
   const { id } = router.query;
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
@@ -40,10 +43,33 @@ export default function Page() {
       <Nav />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-14">
         <h3 className="flex justify-center my-8 text-lg font-semibold text-tremor-content-strong dark:text-dark-tremor-content-strong">
-          Editar artículo
+          {t("edit_article")}
         </h3>
         <ArticleForm articleid={data} />
       </div>
     </>
   );
+}
+
+export function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: {
+        ...require(`../../messages/shared/${locale}.json`),
+        ...require(`../../messages/index/${locale}.json`),
+      },
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      // String variant:
+      "/article/1",
+      // Object variant:
+      { params: { id: "1" } },
+    ],
+    fallback: true,
+  };
 }

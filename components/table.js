@@ -9,9 +9,11 @@ import {
   Button,
 } from "@tremor/react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Tables(props) {
   let { titles, items, view } = props;
+  const t = useTranslations("Table");
 
   const isorder = titles.length == 5 ? true : false;
 
@@ -21,7 +23,7 @@ export default function Tables(props) {
         <TableHead>
           <TableRow>
             {titles?.map((title) => (
-              <TableHeaderCell>{title}</TableHeaderCell>
+              <TableHeaderCell>{t(title)}</TableHeaderCell>
             ))}
           </TableRow>
         </TableHead>
@@ -46,7 +48,7 @@ export default function Tables(props) {
                 <TableCell>
                   <div className="flex">
                     <Link href={`${view}/${item.id}`}>
-                      <Button variant="primary">Editar</Button>
+                      <Button variant="primary">{t("edit")}</Button>
                     </Link>
                   </div>
                 </TableCell>
@@ -69,7 +71,7 @@ export default function Tables(props) {
                 <TableCell>
                   <div className="flex">
                     <Link href={`${view}/${item.id}`}>
-                      <Button variant="primary">Editar</Button>
+                      <Button variant="primary">{t("edit")}</Button>
                     </Link>
                   </div>
                 </TableCell>

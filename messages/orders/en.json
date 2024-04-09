@@ -1,0 +1,21 @@
+{
+    "Orders": {
+        "new_order": "New Order"
+    },
+      "Table": {
+    "id": "ID",
+    "articles": "Articles",
+    "summary": "Summary",
+    "total": "Total Price",
+    "edit": "Edit"
+  },
+    "Order":{
+    "reference": "Reference",
+    "articles": "Articles",
+    "articles_in_order": "Articles in order:",
+    "price": "Summary (without IVA)",
+    "total": "Total",
+    "delete": "Delete",
+    "save": "Save"
+  }
+}
