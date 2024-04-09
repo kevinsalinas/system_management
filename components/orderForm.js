@@ -3,11 +3,14 @@ import { useRouter } from "next/router";
 import { DeleteOrder } from "pages/api/orders/deleteOrder";
 import { SetOrder } from "pages/api/orders/setOrder";
 import { MultiSelect, MultiSelectItem } from "@tremor/react";
+import { useTranslations } from "next-intl";
 
 import Alert from "./alert";
 import { useEffect, useState } from "react";
 
 export default function OrderForm(props) {
+  const t = useTranslations("Order");
+
   const { orderid, articleData } = props;
   const router = useRouter();
 
@@ -105,7 +108,7 @@ export default function OrderForm(props) {
           {open && <Alert />}
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Referencia
+              {t("reference")}
             </p>
             <TextInput
               mx-auto
@@ -119,7 +122,7 @@ export default function OrderForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Artículos
+              {t("articles")}
             </p>
             <MultiSelect
               defaultValue={articlesinorder}
@@ -135,7 +138,7 @@ export default function OrderForm(props) {
           </div>
           <div>
             <h3 className="text-tremor-content-strong dark:text-dark-tremor-content-strong font-medium">
-              Artículos en la orden
+              {t("articles_in_order")}
             </h3>
             <List className="mt-2">
               {orderData.articles?.map((item, key) => (
@@ -158,7 +161,7 @@ export default function OrderForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Total (Sin IVA)
+              {t("price")}
             </p>
             <TextInput
               mx-auto
@@ -170,7 +173,7 @@ export default function OrderForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Precio total
+              {t("total")}
             </p>
             <TextInput
               mx-auto
@@ -183,7 +186,7 @@ export default function OrderForm(props) {
             />
           </div>
           <Button className="mt-8 w-full" type="submit">
-            Guardar
+            {t("save")}
           </Button>
         </div>
       </form>
@@ -194,7 +197,7 @@ export default function OrderForm(props) {
             onClick={handleDelete}
             color="red"
           >
-            Eliminar
+            {t("delete")}
           </Button>
         )}
       </div>

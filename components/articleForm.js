@@ -6,10 +6,12 @@ import { CreateArticle } from "pages/api/articles/createArticle";
 
 import Alert from "./alert";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function ArticleForm(props) {
   const { articleid } = props;
   const router = useRouter();
+  const t = useTranslations("Article");
 
   const [open, setOpen] = useState(false);
 
@@ -41,7 +43,7 @@ export default function ArticleForm(props) {
           {open && <Alert />}
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Referencia
+              {t("reference")}
             </p>
             <TextInput
               mx-auto
@@ -55,7 +57,7 @@ export default function ArticleForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Nombre
+              {t("name")}
             </p>
             <TextInput
               mx-auto
@@ -68,7 +70,7 @@ export default function ArticleForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Descripción
+              {t("description")}
             </p>
             <TextInput
               mx-auto
@@ -81,7 +83,7 @@ export default function ArticleForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Precio (Sin IVA)
+              {t("price")}
             </p>
             <TextInput
               mx-auto
@@ -94,7 +96,7 @@ export default function ArticleForm(props) {
           </div>
           <div>
             <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-              Impuesto aplicable
+              {t("tax")}
             </p>
             <TextInput
               mx-auto
@@ -106,7 +108,7 @@ export default function ArticleForm(props) {
             />
           </div>
           <Button className="mt-8 w-full" type="submit">
-            Enviar
+            {t("save")}
           </Button>
         </div>
       </form>
@@ -117,7 +119,7 @@ export default function ArticleForm(props) {
             onClick={handleDelete}
             color="red"
           >
-            Eliminar
+            {t("delete")}
           </Button>
         )}
       </div>

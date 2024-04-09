@@ -1,7 +1,7 @@
 import httpClient from "helpers/httpClient";
 
 export const SetOrder = async (props) => {
-  console.log("props en set order", props);
+  //   console.log("props en set order", props);
 
   const { id } = props;
   const result = await httpClient

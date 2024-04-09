@@ -1,0 +1,23 @@
+{
+  "Index": {
+    "new_article": "Nuevo Artículo"
+  },
+  "Table": {
+    "id": "ID",
+    "name": "Nombre",
+    "description": "Descripción",
+    "price": "Precio",
+    "tax": "Impuesto",
+    "edit": "Editar"
+  },
+  "Article":{
+    "edit_article": "Editar Artículo",
+    "reference": "Referencia",
+    "name": "Nombre",
+    "description": "Descripción",
+    "price": "Precio (Sin IVA)",
+    "tax": "Impuesto aplicable",
+    "delete": "Eliminar",
+    "save": "Guardar"
+  }
+}

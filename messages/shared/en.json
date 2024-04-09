@@ -1,0 +1,9 @@
+{
+  "Navigation": {
+    "home": "Articles",
+    "add_article": "New Article",
+    "orders": "Order",
+    "add_order": "New Order",
+    "switchLocale": "ES"
+  }
+}

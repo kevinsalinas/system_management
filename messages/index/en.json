@@ -1,0 +1,24 @@
+{
+  "Index": {
+    "new_article": "New Article"
+  },
+  "Table": {
+    "id": "ID",
+    "name": "Name",
+    "description": "Description",
+    "price": "Price",
+    "tax": "Tax",
+    "edit": "Edit"
+  },
+  "Article":{
+    "edit_article": "Edit Article",
+    "reference": "Reference",
+    "name": "Name",
+    "description": "Description",
+    "price": "Price (Without IVA)",
+    "tax": "Tax",
+    "delete": "Delete",
+    "save": "save"
+  }
+
+}

@@ -5,7 +5,8 @@ import { Button } from "@tremor/react";
 import Link from "next/link";
 import { GetArticles } from "./api/articles/getarticles";
 import { useEffect, useState } from "react";
-
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 // import GetArticles from "./api/articles/getarticles";
 
 export default function Index(props) {
@@ -13,6 +14,8 @@ export default function Index(props) {
   const titles = ["id", "name", "description", "price", "tax", "edit"];
   const view = "article";
   const [data, setData] = useState(null);
+  const t = useTranslations("Index");
+  const { locale } = useRouter();
 
   useEffect(() => {
     fetch(`http://localhost:3000/articles`)
@@ -36,7 +39,7 @@ export default function Index(props) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8">
         <Link href="/newArticle">
           <Button variant="secondary" href={"/newArticle"}>
-            Nuevo Artículo
+            {t("new_article")}
           </Button>
         </Link>
       </div>
@@ -47,15 +50,13 @@ export default function Index(props) {
   );
 }
 
-// export const getStaticProps = async () => {
-//   const indexdata = await GetArticles();
-//   // console.log("index data", indexdata);
-
-//   return {
-//     props: {
-//       articles: indexdata || {},
-//     },
-
-//     revalidate: 1, // In seconds
-//   };
-// };
+export function getStaticProps({ locale }) {
+  return {
+    props: {
+      messages: {
+        ...require(`../messages/shared/${locale}.json`),
+        ...require(`../messages/index/${locale}.json`),
+      },
+    },
+  };
+}

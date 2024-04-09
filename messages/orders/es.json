@@ -1,0 +1,21 @@
+{
+    "Orders": {
+        "new_order": "Nueva Orden"
+    },
+    "Table": {
+        "id": "ID",
+        "articles": "Artículos",
+        "summary": "Total (sin IVA)",
+        "total": "Precio Total",
+        "edit": "Editar"
+    },
+    "Order":{
+    "reference": "Referencia",
+    "articles": "Artículos",
+    "articles_in_order": "Artículos en la orden:",
+    "price": "Total (sin IVA)",
+    "total": "Precio Total",
+    "delete": "Eliminar",
+    "save": "Guardar"
+  }
+}

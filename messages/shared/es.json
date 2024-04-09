@@ -1,0 +1,9 @@
+{
+  "Navigation": {
+    "home": "Artículos",
+    "add_article": "Nuevo Artículo",
+    "orders": "Pedidos",
+    "add_order": "Nuevo Pedido",
+    "switchLocale": "EN"
+  }
+}

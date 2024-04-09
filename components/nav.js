@@ -1,12 +1,15 @@
 import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
 
 const navigation = [
-  { name: "Artículos", href: "/" },
-  { name: "Nuevo Artículo", href: "/newArticle" },
-  { name: "Pedidos", href: "/pedidos" },
-  { name: "Nuevo Pedido", href: "/newOrder" },
+  { name: "home", href: "/" },
+  { name: "add_article", href: "/newArticle" },
+  { name: "orders", href: "/pedidos" },
+  { name: "add_order", href: "/newOrder" },
 ];
 
 function classNames(...classes) {
@@ -14,7 +17,12 @@ function classNames(...classes) {
 }
 
 export default function Nav() {
-  const pathname = usePathname();
+  const t = useTranslations("Navigation");
+
+  const { locale, locales, route, asPath } = useRouter();
+  const router = useRouter();
+  const otherLocale = locales?.find((cur) => cur !== locale);
+  const pathName = usePathname();
 
   return (
     <Disclosure as="nav" className="bg-white shadow-sm">
@@ -40,17 +48,23 @@ export default function Nav() {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        pathname === item.href
+                        pathName === item.href
                           ? "border-slate-500 text-gray-900"
                           : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300",
                         "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                       )}
-                      aria-current={pathname === item.href ? "page" : null}
+                      aria-current={pathName === item.href ? "page" : null}
                     >
-                      {item.name}
+                      {t(item.name)}
+                      {/* {t("home")} */}
                     </a>
                   ))}
                 </div>
+              </div>
+              <div className="flex align-middle my-auto">
+                <Link href={asPath} locale={otherLocale}>
+                  <button>{t("switchLocale")}</button>
+                </Link>
               </div>
             </div>
           </div>
