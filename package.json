@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build",
-    "start": "next start",
+    "build": "next build",
+    "start": "next start --port 8081",
     "lint": "next lint --fix ."
   },
   "dependencies": {

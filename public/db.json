@@ -59,18 +59,6 @@
   ],
   "orders": [
     {
-      "id": "26339",
-      "articles": [
-        {
-          "id": "2",
-          "name": "camiseta casual",
-          "quantity": "1"
-        }
-      ],
-      "summary": 12,
-      "total": 14.52
-    },
-    {
       "id": "37750",
       "articles": [
         {
@@ -91,11 +79,6 @@
       "id": "38664",
       "articles": [
         {
-          "id": "4",
-          "name": "camiseta interior",
-          "quantity": "1"
-        },
-        {
           "id": "3",
           "name": "camiseta deportiva",
           "quantity": 2
@@ -104,29 +87,14 @@
           "id": "15878",
           "name": "pants",
           "quantity": "1"
-        },
-        {
-          "id": "13527",
-          "name": "calcetas",
-          "quantity": "1"
         }
       ],
-      "summary": 167,
-      "total": 202.07
+      "summary": 144,
+      "total": 174.24
     },
     {
-      "id": "41816",
+      "id": "23921",
       "articles": [
-        {
-          "id": "2",
-          "name": "camiseta casual",
-          "quantity": 1
-        },
-        {
-          "id": "1",
-          "name": "camiseta",
-          "quantity": "1"
-        },
         {
           "id": "4",
           "name": "camiseta interior",
@@ -138,25 +106,8 @@
           "quantity": "1"
         }
       ],
-      "summary": 66,
-      "total": 79.86
-    },
-    {
-      "id": 15742,
-      "articles": [
-        {
-          "id": "15878",
-          "name": "pants",
-          "quantity": 3
-        },
-        {
-          "id": "31322",
-          "name": "chaqueta",
-          "quantity": 3
-        }
-      ],
-      "summary": 660,
-      "total": 798.6
+      "summary": 24,
+      "total": 29.04
     }
   ]
 }

@@ -35,13 +35,13 @@ export default function Index(props) {
 
 export const getStaticProps = async () => {
   const ordersArray = await GetOrders();
-  console.log("index data", ordersArray);
+  //   console.log("index data", ordersArray);
 
   return {
     props: {
       orders: ordersArray || {},
     },
 
-    revalidate: 180, // In seconds
+    revalidate: 1, // In seconds
   };
 };

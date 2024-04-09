@@ -39,13 +39,13 @@ export default function Index(props) {
 
 export const getStaticProps = async () => {
   const indexdata = await GetArticles();
-  console.log("index data", indexdata);
+  // console.log("index data", indexdata);
 
   return {
     props: {
       articles: indexdata || {},
     },
 
-    revalidate: 180, // In seconds
+    revalidate: 1, // In seconds
   };
 };
