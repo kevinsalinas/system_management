@@ -4,11 +4,21 @@ import Tables from "@components/table";
 import { Button } from "@tremor/react";
 import Link from "next/link";
 import { GetOrders } from "./api/orders/getOrders";
+import { useEffect, useState } from "react";
 
 export default function Index(props) {
   const { orders } = props;
   const titles = ["id", "articles", "summary", "total", "edit"];
   const view = "order";
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/orders`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
 
   return (
     <>
@@ -27,21 +37,21 @@ export default function Index(props) {
         </Link>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
-        <Tables items={orders} titles={titles} view={view} />
+        <Tables items={data} titles={titles} view={view} />
       </div>
     </>
   );
 }
 
-export const getStaticProps = async () => {
-  const ordersArray = await GetOrders();
-  //   console.log("index data", ordersArray);
+// export const getStaticProps = async () => {
+//   const ordersArray = await GetOrders();
+//   //   console.log("index data", ordersArray);
 
-  return {
-    props: {
-      orders: ordersArray || {},
-    },
+//   return {
+//     props: {
+//       orders: ordersArray || {},
+//     },
 
-    revalidate: 1, // In seconds
-  };
-};
+//     revalidate: 1, // In seconds
+//   };
+// };

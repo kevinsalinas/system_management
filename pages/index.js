@@ -4,6 +4,7 @@ import Tables from "@components/table";
 import { Button } from "@tremor/react";
 import Link from "next/link";
 import { GetArticles } from "./api/articles/getarticles";
+import { useEffect, useState } from "react";
 
 // import GetArticles from "./api/articles/getarticles";
 
@@ -11,6 +12,15 @@ export default function Index(props) {
   const { articles } = props;
   const titles = ["id", "name", "description", "price", "tax", "edit"];
   const view = "article";
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/articles`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
 
   return (
     <>
@@ -31,21 +41,21 @@ export default function Index(props) {
         </Link>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
-        <Tables items={props.articles} titles={titles} view={view} />
+        <Tables items={data} titles={titles} view={view} />
       </div>
     </>
   );
 }
 
-export const getStaticProps = async () => {
-  const indexdata = await GetArticles();
-  // console.log("index data", indexdata);
+// export const getStaticProps = async () => {
+//   const indexdata = await GetArticles();
+//   // console.log("index data", indexdata);
 
-  return {
-    props: {
-      articles: indexdata || {},
-    },
+//   return {
+//     props: {
+//       articles: indexdata || {},
+//     },
 
-    revalidate: 1, // In seconds
-  };
-};
+//     revalidate: 1, // In seconds
+//   };
+// };

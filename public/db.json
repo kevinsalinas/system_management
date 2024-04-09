@@ -91,23 +91,6 @@
       ],
       "summary": 144,
       "total": 174.24
-    },
-    {
-      "id": "23921",
-      "articles": [
-        {
-          "id": "4",
-          "name": "camiseta interior",
-          "quantity": "1"
-        },
-        {
-          "id": "3",
-          "name": "camiseta deportiva",
-          "quantity": "1"
-        }
-      ],
-      "summary": 24,
-      "total": 29.04
     }
   ]
 }
