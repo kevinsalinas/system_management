@@ -10,6 +10,6 @@
 4. Start JSON Server in port 3000 with npx `npx json-server ./public/db.json -p 3000`
 
 5. Build Docker image `docker build -t myapp .`
-6. Run Container `docker run -p 3000:3001 myapp`
+6. Run Container `docker run -p 3005:3005 myapp`
 
 7. (Optional) Run dev server `npm run dev` o `yarn dev`
